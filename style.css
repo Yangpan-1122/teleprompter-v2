@@ -60,24 +60,11 @@ body {
     gap: 16px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+.brand { display: flex; align-items: center; gap: 10px; }
 .brand .icon { font-size: 24px; }
-.brand h1 {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--highlight-color);
-}
+.brand h1 { font-size: 18px; font-weight: 600; color: var(--highlight-color); }
 
-.controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-}
+.controls { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .btn-group { display: flex; gap: 8px; }
 
 /* ==================== 按钮样式 ==================== */
@@ -91,14 +78,8 @@ body {
     transition: all 0.2s ease;
     color: #fff;
 }
-.btn-primary {
-    background: linear-gradient(135deg, #4fc3f7, #29b6f6);
-    color: #121212;
-}
-.btn-primary:hover {
-    background: linear-gradient(135deg, #29b6f6, #0288d1);
-    transform: translateY(-1px);
-}
+.btn-primary { background: linear-gradient(135deg, #4fc3f7, #29b6f6); color: #121212; }
+.btn-primary:hover { background: linear-gradient(135deg, #29b6f6, #0288d1); transform: translateY(-1px); }
 .btn-secondary { background-color: #3c3c3c; color: #ccc; }
 .btn-secondary:hover { background-color: #4a4a4a; color: #fff; }
 .btn:active { transform: scale(0.96); }
@@ -106,13 +87,9 @@ body {
 /* ==================== 滑块组 ==================== */
 .slider-group { display: flex; gap: 12px; }
 .speed-control {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background-color: var(--panel-color);
-    padding: 6px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    display: flex; align-items: center; gap: 8px;
+    background-color: var(--panel-color); padding: 6px 14px;
+    border-radius: 8px; border: 1px solid var(--border-color);
 }
 .speed-control label { font-size: 13px; color: #888; }
 input[type="range"] { width: 80px; cursor: pointer; accent-color: var(--highlight-color); }
@@ -120,46 +97,21 @@ input[type="range"] { width: 80px; cursor: pointer; accent-color: var(--highligh
 
 /* ==================== 提词区与焦点高亮 ==================== */
 .prompter-area {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
-    padding: 40vh 40px;
+    flex: 1; overflow: hidden; position: relative; padding: 40vh 40px;
     background: radial-gradient(circle at center, #2d2d2d 0%, #1a1a1a 100%);
     mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
 }
-body.light-theme .prompter-area {
-    background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 100%);
-}
-.text-content {
-    font-size: var(--font-size);
-    line-height: 2;
-    text-align: center;
-    white-space: pre-wrap;
-    transition: transform 0.1s linear;
-}
-.text-content p {
-    margin-bottom: 1.5em;
-    color: #888;
-    transition: color 0.3s ease, font-weight 0.3s ease;
-}
-.text-content p.focus {
-    color: var(--text-color);
-    font-weight: 700;
-    text-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
-}
+body.light-theme .prompter-area { background: radial-gradient(circle at center, #ffffff 0%, #e0e0e0 100%); }
+.text-content { font-size: var(--font-size); line-height: 2; text-align: center; white-space: pre-wrap; transition: transform 0.1s linear; }
+.text-content p { margin-bottom: 1.5em; color: #888; transition: color 0.3s ease, font-weight 0.3s ease; }
+.text-content p.focus { color: var(--text-color); font-weight: 700; text-shadow: 0 0 20px rgba(79, 195, 247, 0.5); }
 
 /* ==================== 状态栏 ==================== */
 .status-bar {
-    padding: 12px 28px;
-    background-color: var(--bar-color);
-    font-size: 13px;
-    color: #888;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 12px 28px; background-color: var(--bar-color);
+    font-size: 13px; color: #888; border-top: 1px solid var(--border-color);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
 }
 .status-ready { color: #66bb6a; font-weight: 600; }
 .status-running { color: var(--highlight-color); font-weight: 600; }
@@ -167,12 +119,7 @@ body.light-theme .prompter-area {
 
 /* ==================== 模式切换样式 ==================== */
 /* 专注模式 */
-body.zen-mode .toolbar,
-body.zen-mode .status-bar { display: none; }
-body.zen-mode .app-container {
-    height: 100vh; max-width: 100%;
-    border-radius: 0; border: none;
-}
-
+body.zen-mode .toolbar, body.zen-mode .status-bar { display: none; }
+body.zen-mode .app-container { height: 100vh; max-width: 100%; border-radius: 0; border: none; }
 /* 镜像模式 */
 body.mirror-mode .text-content { transform: scaleX(-1); }
