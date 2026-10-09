@@ -3,38 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能提词器 | Teleprompter</title>
+    <title>智能提词器 Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="app-container">
+        <!-- 顶部工具栏 -->
         <header class="toolbar">
             <div class="brand">
                 <span class="icon">📖</span>
-                <h1>智能提词器</h1>
+                <h1>智能提词器 Pro</h1>
             </div>
+            
             <div class="controls">
-                <button id="btnPlay" class="btn btn-primary">▶ 开始</button>
-                <button id="btnPause" class="btn btn-secondary">⏸ 暂停</button>
-                <button id="btnReset" class="btn btn-secondary">↺ 重置</button>
-                <button id="btnZen" class="btn btn-secondary">🧘 专注</button>
-                <div class="speed-control">
-                    <label for="speedControl">速度</label>
-                    <input type="range" id="speedControl" min="1" max="10" value="5">
-                    <span id="speedValue" class="badge">5x</span>
+                <!-- 基础控制 -->
+                <div class="btn-group">
+                    <button id="btnPlay" class="btn btn-primary">▶ 开始</button>
+                    <button id="btnPause" class="btn btn-secondary">⏸ 暂停</button>
+                    <button id="btnReset" class="btn btn-secondary">↺ 重置</button>
+                </div>
+
+                <!-- 进阶功能 -->
+                <div class="btn-group">
+                    <button id="btnZen" class="btn btn-secondary">🧘 专注</button>
+                    <button id="btnTheme" class="btn btn-secondary">🌓 主题</button>
+                    <button id="btnMirror" class="btn btn-secondary">🪞 镜像</button>
+                    <button id="btnFullscreen" class="btn btn-secondary">⛶ 全屏</button>
+                </div>
+
+                <!-- 参数调节 -->
+                <div class="slider-group">
+                    <div class="speed-control">
+                        <label for="speedControl">速度</label>
+                        <input type="range" id="speedControl" min="1" max="10" value="5">
+                        <span id="speedValue" class="badge">5x</span>
+                    </div>
+                    <div class="speed-control">
+                        <label for="fontSizeControl">字号</label>
+                        <input type="range" id="fontSizeControl" min="20" max="60" value="36">
+                    </div>
                 </div>
             </div>
         </header>
+
+        <!-- 提词主区域 -->
         <main class="prompter-area" id="prompterArea">
             <div id="textDisplay" class="text-content">
-                <p>欢迎使用智能提词器。</p>
-                <p>你可以直接将你的演讲稿粘贴到这里。</p>
-                <p>支持键盘控制：空格键播放/暂停，上下键调速。</p>
+                <p>欢迎使用智能提词器 Pro 版本。</p>
+                <p>这是一个功能完整的演示文稿辅助工具。</p>
+                <p>你可以将你的演讲稿粘贴到这里，它会自动向上滚动。</p>
+                <p>屏幕中间的文字会被自动高亮，帮助你聚焦当前朗读位置。</p>
+                <p>你可以使用快捷键控制滚动：空格键播放/暂停，上下键调速。</p>
+                <p>还可以按 N 键跳到下一段，按 P 键跳到上一段。</p>
+                <p>需要专注时，点击顶部“🧘 专注”按钮隐藏所有UI。</p>
+                <p>祝你演讲顺利，表现完美！</p>
             </div>
         </main>
+
+        <!-- 底部状态栏 -->
         <footer class="status-bar">
             <span>状态：<span id="statusText" class="status-ready">已就绪</span></span>
-            <span>快捷键：空格(播放/暂停) | ↑↓(调速) | R(重置)</span>
+            <span>快捷键：空格(播放/暂停) | F(全屏) | R(重置) | N/P(跳转段落) | ↑↓(调速)</span>
         </footer>
     </div>
     <script src="script.js"></script>
