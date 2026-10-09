@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能提词器 | Teleprompter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="toolbar">
+            <div class="brand">
+                <span class="icon">📖</span>
+                <h1>智能提词器</h1>
+            </div>
+            <div class="controls">
+                <button id="btnPlay" class="btn btn-primary">▶ 开始</button>
+                <button id="btnPause" class="btn btn-secondary">⏸ 暂停</button>
+                <button id="btnReset" class="btn btn-secondary">↺ 重置</button>
+                <div class="speed-control">
+                    <label for="speedControl">速度</label>
+                    <input type="range" id="speedControl" min="1" max="10" value="5">
+                    <span id="speedValue" class="badge">5x</span>
+                </div>
+            </div>
+        </header>
+        <main class="prompter-area" id="prompterArea">
+            <div id="textDisplay" class="text-content">
+                <p>欢迎使用智能提词器。</p>
+                <p>你可以直接将你的演讲稿粘贴到这里。</p>
+                <p>支持键盘控制：空格键播放/暂停，上下键调速。</p>
+            </div>
+        </main>
+        <footer class="status-bar">
+            <span>状态：<span id="statusText" class="status-ready">已就绪</span></span>
+            <span>快捷键：空格(播放/暂停) | ↑↓(调速) | R(重置)</span>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
