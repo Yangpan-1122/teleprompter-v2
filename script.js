@@ -35,7 +35,6 @@ function scrollStep() {
     if (!appState.isPlaying) return;
     appState.scrollPosition += appState.speedLevel * appState.pixelsPerLevel;
     const maxScroll = dom.textDisplay.scrollHeight - dom.prompterArea.clientHeight;
-
     if (appState.scrollPosition >= maxScroll) {
         appState.scrollPosition = maxScroll;
         dom.textDisplay.style.transform = `translateY(-${appState.scrollPosition}px)`;
@@ -68,19 +67,15 @@ function resetScrolling() {
 }
 
 // ==================== 完整事件绑定 ====================
-
-// 基础控制
 dom.btnPlay.addEventListener('click', startScrolling);
 dom.btnPause.addEventListener('click', pauseScrolling);
 dom.btnReset.addEventListener('click', resetScrolling);
 
-// 速度调节
 dom.speedControl.addEventListener('input', (e) => {
     appState.speedLevel = parseInt(e.target.value, 10);
     dom.speedValue.textContent = `${appState.speedLevel}x`;
 });
 
-// 字号调节
 if (dom.fontSizeControl) {
     dom.fontSizeControl.addEventListener('input', (e) => {
         document.documentElement.style.setProperty('--font-size', `${e.target.value}px`);
@@ -88,41 +83,34 @@ if (dom.fontSizeControl) {
     });
 }
 
-// 专注模式
 if (dom.btnZen) {
     dom.btnZen.addEventListener('click', () => {
         document.body.classList.toggle('zen-mode');
-        dom.statusText.textContent = document.body.classList.contains('zen-mode') 
-            ? '专注模式：按 ESC 退出' : '已退出专注模式';
+        dom.statusText.textContent = document.body.classList.contains('zen-mode') ? '专注模式：按 ESC 退出' : '已退出专注模式';
     });
 }
 
-// 主题切换
 if (dom.btnTheme) {
     dom.btnTheme.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
-        dom.statusText.textContent = document.body.classList.contains('light-theme') 
-            ? '已切换至浅色主题' : '已切换至深色主题';
+        dom.statusText.textContent = document.body.classList.contains('light-theme') ? '已切换至浅色主题' : '已切换至深色主题';
     });
 }
 
-// 镜像模式
 if (dom.btnMirror) {
     dom.btnMirror.addEventListener('click', () => {
         document.body.classList.toggle('mirror-mode');
-        dom.statusText.textContent = document.body.classList.contains('mirror-mode') 
-            ? '镜像模式：适配分光镜' : '已退出镜像模式';
+        dom.statusText.textContent = document.body.classList.contains('mirror-mode') ? '镜像模式：适配分光镜' : '已退出镜像模式';
     });
 }
 
-// 全屏功能
 function toggleFullscreen() {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen();
     else document.exitFullscreen();
 }
 if (dom.btnFullscreen) dom.btnFullscreen.addEventListener('click', toggleFullscreen);
 
-// 段落跳转按钮
+// 段落跳转
 function jumpToNext() {
     const paragraphs = dom.textDisplay.querySelectorAll('p');
     const currentScroll = appState.scrollPosition;
