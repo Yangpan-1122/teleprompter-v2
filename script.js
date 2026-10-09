@@ -138,3 +138,9 @@ document.addEventListener('keydown', (e) => {
     updateStatus('已就绪', 'status-ready');
     console.log('提词器初始化完成，当前速度等级:', appState.speedLevel);
 })();
+
+// 镜像模式
+const btnMirror = document.getElementById('btnMirror');
+btnMirror.addEventListener('click', () => {
+    document.body.classList.toggle('mirror-mode');
+});
